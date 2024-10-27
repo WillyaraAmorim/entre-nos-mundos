@@ -1,13 +1,19 @@
-body {
+/* ===========================================
+   ESTILO GLOBAL 
+   =========================================== */
+   body {
     font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0c2a2a; /* Cor de fundo lembrando o universo */
-    color: #F5F5F5; /* Texto em branco para contraste */
+    background-color: #0f1d2b; /* Fundo do universo */
+    color: #e0f2f1; /* Texto claro */
 }
 
+/* ===========================================
+   CABEÇALHO
+   =========================================== */
 .header {
-    background-color: #422b4a; /* Tom elegante */
+    background-color: #2b3240; /* Cor neutra para contraste */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,7 +21,7 @@ body {
 }
 
 .logo-image {
-    width: 150px; /* Logo um pouco maior que os ícones */
+    width: 150px;
 }
 
 .social-icons {
@@ -28,21 +34,23 @@ body {
 }
 
 .social-icon img {
-    width: 50px; /* Tamanho dos ícones */
-    height: 50px; /* Tamanho dos ícones */
+    width: 50px;
+    height: 50px;
 }
 
 .social-icon:hover {
-    transform: scale(1.1); /* Efeito de aumento ao passar o mouse */
+    transform: scale(1.1);
 }
 
-/* Estilo do Menu */
+/* ===========================================
+   MENU PRINCIPAL
+   =========================================== */
 .menu-section {
     text-align: center;
     position: relative;
-    background-color: #422b4a; /* Cor de fundo do menu */
-    padding: 10px 0; /* Espaçamento interno */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    background-color: #3a475e; /* Fundo do menu */
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .menu-section ul {
@@ -54,67 +62,112 @@ body {
 
 .menu-section ul li {
     position: relative;
-    margin: 0 30px; /* Margem maior entre os itens */
+    margin: 0 30px;
 }
 
 .menu-section ul li a {
     text-decoration: none;
-    color: #F5F5F5; /* Cor do texto */
-    padding: 10px 15px; /* Padding para aumentar área clicável */
-    border-radius: 5px; /* Bordas arredondadas */
-    transition: background-color 0.3s, color 0.3s; /* Efeitos de transição */
+    color: #b2ebf2;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .menu-section ul li a:hover {
-    background-color: #F5F5F5; /* Cor de fundo ao passar o mouse */
-    color: #422b4a; /* Cor do texto ao passar o mouse */
+    background-color: #26c6da; /* Fundo ao passar o mouse */
+    color: #3a475e;
 }
 
-/* Estilo do Submenu */
-.menu-section ul li .submenu {
+/* ===========================================
+   SUBMENU E SUB-SUBMENU
+   =========================================== */
+   /* Estilo do menu principal */
+.menu-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+   
+   .menu-section ul li .submenu {
     display: none;
     position: absolute;
-    top: 100%; /* Alinhar com o topo do item pai */
+    top: 100%;
     left: 0;
-    background: #422b4a; /* Cor de fundo do submenu */
+    background: #3a475e;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-    z-index: 1; /* Certifique-se de que o submenu fique acima */
-    border-radius: 5px; /* Bordas arredondadas */
-    margin-top: 10px; /* Espaço acima do submenu */
-    white-space: nowrap; /* Impedir quebras de linha */
+    border-radius: 5px;
+    padding: 10px 0;
+    white-space: nowrap;
+    opacity: 0; /* Submenu invisível inicialmente */
+    transition: opacity 0.2s ease-in-out; /* Transição suave */
 }
 
 .menu-section ul li:hover .submenu {
-    display: block; /* Exibir submenu ao passar o mouse */
+    display: block;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1; /* Torna o submenu visível */
 }
 
-/* Estilo para os itens do submenu */
 .menu-section ul li .submenu li {
-    margin: 0; /* Remover margens do submenu */
+    margin: 0;
+    position: relative;
 }
 
 .menu-section ul li .submenu li a {
-    padding: 10px 20px; /* Padding no submenu */
-    color: #F5F5F5; /* Cor do texto */
-    transition: background-color 0.3s; /* Transição suave */
-    display: block; /* Faz o link ocupar toda a largura */
-    width: auto; /* Ajuste automático à largura do conteúdo */
-    min-width: 150px; /* Largura mínima para os itens */
+    padding: 12px 20px;
+    color: #b2ebf2;
+    display: block;
+    min-width: 150px;
+    transition: background-color 0.3s;
 }
 
 .menu-section ul li .submenu li a:hover {
-    background-color: #F5F5F5; /* Cor de fundo ao passar o mouse no submenu */
-    color: #422b4a; /* Cor do texto ao passar o mouse no submenu */
+    background-color: #26c6da;
+    color: #3a475e;
 }
 
-/* Estilo para sub-submenu */
-.menu-section ul li .submenu .submenu {
-    top: 0; /* Alinhar ao topo do item pai */
-    left: 100%; /* Colocar ao lado do submenu pai */
-    margin-left: 10px; /* Espaço entre os submenus */
+/* Nível 2 - Submenu-2 */
+.menu-section ul li .submenu .submenu-2 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    margin-left: 10px;
+    background: #3a475e;
+    padding-top: 0px;
+    border-radius: 5px;
+    z-index: 1;
 }
 
-.highlights, .quotes-carousel, .featured-reviews, .about-partners {
+/* Indicador visual de submenu (seta) */
+.menu-section ul li a.has-submenu::after {
+    content: " ▼";
+    font-size: 0.8em;
+    color: #b2ebf2;
+    margin-left: 5px;
+}
+
+/* Links do submenu */
+.menu-section ul li .submenu li a,
+.menu-section ul li .submenu .submenu-2 li a {
+    padding: 10px 20px;
+    color: #b2ebf2;
+    display: block;
+    min-width: 150px;
+    transition: background-color 0.3s;
+}
+
+.menu-section ul li .submenu li a:hover,
+.menu-section ul li .submenu .submenu-2 li a:hover {
+    background-color: #26c6da;
+    color: #3a475e;
+}
+
+/* ===========================================
+   SEÇÃO DE DESTAQUES, CARDS E OUTRAS ÁREAS
+   =========================================== */
+   .highlights, .quotes-carousel, .featured-reviews, .about-partners {
     text-align: center;
     margin: 20px;
 }
@@ -130,19 +183,28 @@ body {
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
-    background-color: #422b4a; /* Cor dos cards */
+    background-color: #3a475e;
     transition: transform 0.2s;
+    color: #e0f2f1;
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Efeito ao passar o mouse */
+    transform: translateY(-5px);
 }
 
 .large-card {
     width: 200px;
 }
 
-.quotes-carousel {
+
+.large-card {
+    width: 200px;
+}
+
+/* ===========================================
+   CAROUSEL
+   =========================================== */
+   .quotes-carousel {
     position: relative;
 }
 
@@ -153,23 +215,23 @@ body {
 }
 
 .carousel {
-    width: 1000px; /* Ajuste conforme necessário */
+    width: 1000px;
     overflow: hidden;
     text-align: center;
 }
 
 .quote {
-    display: none; /* Ocultar todas as frases inicialmente */
+    display: none;
     padding: 10px;
 }
 
 .quote.active {
-    display: block; /* Exibir apenas a frase ativa */
+    display: block;
 }
 
 .arrow {
-    background-color: #422b4a; /* Cor de fundo das setas */
-    color: #F5F5F5; /* Cor do texto */
+    background-color: #5c6bc0;
+    color: #e0f2f1;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -180,15 +242,18 @@ body {
 }
 
 .arrow:hover {
-    background-color: #90619c; /* Cor ao passar o mouse */
+    background-color: #7986cb;
 }
 
 .arrow:focus {
-    outline: 2px solid #F5F5F5; /* Contorno ao focar */
+    outline: 2px solid #e0f2f1;
 }
 
+/* ===========================================
+   LINHA PONTILHADA
+   =========================================== */
 .dotted-line {
-    border-top: 1px dotted #F5F5F5;
+    border-top: 1px dotted #e0f2f1;
     margin: 10px 0;
 }
 
@@ -211,7 +276,9 @@ body {
     transform: translateY(-5px); /* Efeito ao passar o mouse */
 }
 
-/* Estilos dos botões de todos os cards */
+/* ===========================================
+   ESTILO DO BOTÃO DOS CARDS
+   =========================================== */
 .card button {
     width: 90%; /* Ocupa quase toda a largura do card */
     padding: 10px; /* Espaçamento interno para conforto */
@@ -242,14 +309,18 @@ body {
     height: 180px;
 }
 
-.footer {
-    background-color: #422b4a; /* Cor do rodapé */
+/* ===========================================
+   ESTILO DO RODAPÉ
+   =========================================== */
+   .footer {
+    background-color: #3a475e;
     text-align: center;
     padding: 20px;
 }
 
 .footer-social a {
     margin: 0 10px;
-    color: #F5F5F5;
+    color: #e0f2f1;
     text-decoration: none;
 }
+

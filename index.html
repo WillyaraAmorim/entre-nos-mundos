@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Literário de Willyara Amorim</title>
+    <title>Entre nos Mundos</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,14 +37,14 @@
         <ul>
             <li><a href="#">Início</a></li>
             <li>
-                <a href="#">Resenhas</a>
+                <a href="#" class="has-submenu">Resenhas</a>
                 <ul class="submenu">
                     <li><a href="#">Livros Únicos</a></li>
                     <li><a href="#">Livros com continuações</a></li>
                     <li><a href="#">Favoritos</a></li>
                     <li>
-                        <a href="#">Por Gênero</a>
-                        <ul class="submenu">
+                        <a href="#" class="has-submenu">Por Gênero</a>
+                        <ul class="submenu-2">
                             <li><a href="#">Ficção</a></li>
                             <li><a href="#">Não-ficção</a></li>
                             <li><a href="#">Romance</a></li>
@@ -53,19 +53,19 @@
                 </ul>
             </li>
             <li>
-                <a href="#">Projetos</a>
+                <a href="#" class="has-submenu">Projetos</a>
                 <ul class="submenu">
                     <li>
-                        <a href="#">Diário de Leitura</a>
-                        <ul class="submenu">
+                        <a href="#" class="has-submenu">Diário de Leitura</a>
+                        <ul class="submenu-2">
                             <li><a href="#">Diário de Janeiro</a></li>
                             <li><a href="#">Diário de Fevereiro</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Resenhando em outro idioma</a></li>
                     <li>
-                        <a href="#">Mulheres na ficção-cientifica</a>
-                        <ul class="submenu">
+                        <a href="#" class="has-submenu">Mulheres na ficção-cientifica</a>
+                        <ul class="submenu-2">
                             <li><a href="#">Autoras Clássicas</a></li>
                             <li><a href="#">Novas Autoras</a></li>
                         </ul>
@@ -76,7 +76,6 @@
         </ul>
         <div class="dotted-line"></div>
     </nav>
-
 
     <!-- Section 2 - Destaques -->
     <section class="highlights">
@@ -224,6 +223,58 @@
                 showQuote(currentIndex);
             });
         });
+
+        document.addEventListener('DOMContentLoaded', () => {
+        const menuItems = document.querySelectorAll('.menu-section ul li > a.has-submenu');
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault(); // Impede o comportamento padrão do link
+
+                // Alterna a visibilidade do submenu correspondente
+                const submenu = item.nextElementSibling;
+                if (submenu.style.display === 'block') {
+                    submenu.style.display = 'none';
+                } else {
+                    closeAllSubmenus(); // Fecha outros submenus abertos
+                    submenu.style.display = 'block';
+                }
+            });
+        });
+
+        // Para submenus de segundo nível
+        const subMenuItems = document.querySelectorAll('.submenu > li > a.has-submenu');
+        
+        subMenuItems.forEach(subItem => {
+            subItem.addEventListener('click', (e) => {
+                e.preventDefault();
+                const subMenu2 = subItem.nextElementSibling;
+                
+                if (subMenu2.style.display === 'block') {
+                    subMenu2.style.display = 'none';
+                } else {
+                    closeAllSubmenus(); // Fecha todos os outros submenus abertos
+                    subMenu2.style.display = 'block';
+                }
+            });
+        });
+
+        // Fecha todos os submenus ao clicar fora do menu
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.menu-section')) {
+                closeAllSubmenus();
+            }
+        });
+
+        // Função para fechar todos os submenus
+        function closeAllSubmenus() {
+            document.querySelectorAll('.submenu, .submenu-2').forEach(submenu => {
+                submenu.style.display = 'none';
+            });
+        }
+    });
+
+
     </script>
     
 
