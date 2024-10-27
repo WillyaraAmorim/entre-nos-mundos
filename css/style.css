@@ -1,0 +1,127 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0c2a2a; /* Cor de fundo lembrando o universo */
+    color: #F5F5F5; /* Texto em branco para contraste */
+}
+
+.header {
+    background-color: #422b4a; /* Tom elegante */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo-image {
+    width: 150px; /* Logo um pouco maior que os ícones */
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icon {
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img {
+    width: 50px; /* Tamanho dos ícones */
+    height: 50px; /* Tamanho dos ícones */
+}
+
+.social-icon:hover {
+    transform: scale(1.1); /* Efeito de aumento ao passar o mouse */
+}
+
+.menu-section {
+    text-align: center;
+    position: relative;
+}
+
+.menu-section ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-section ul li {
+    position: relative;
+    margin: 0 20px;
+}
+
+.menu-section ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.menu-section ul li:hover .submenu {
+    display: block;
+}
+
+.menu-section .dotted-line {
+    border-top: 1px dotted #F5F5F5;
+    margin: 10px 0;
+}
+
+.highlights, .quotes-carousel, .featured-reviews, .about-partners {
+    text-align: center;
+    margin: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #422b4a; /* Cor dos cards */
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito ao passar o mouse */
+}
+
+.large-card {
+    width: 200px;
+}
+
+.carousel {
+    animation: scroll 10s infinite linear;
+}
+
+@keyframes scroll {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100%); }
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+.footer {
+    background-color: #422b4a; /* Cor do rodapé */
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-social a {
+    margin: 0 10px;
+    color: #F5F5F5;
+    text-decoration: none;
+}
