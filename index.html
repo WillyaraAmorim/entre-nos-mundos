@@ -17,16 +17,16 @@
             <img src="imagens/logo.png" alt="Logo do Blog" class="logo-image">
         </div>
         <div class="social-icons">
-            <a href="https://instagram.com" target="_blank" class="social-icon">
+            <a href="https://www.instagram.com/entrenosmundos/" target="_blank" class="social-icon">
                 <img src="icons/instagram logo_icon.svg" alt="Instagram">
             </a>
-            <a href="https://threads.net" target="_blank" class="social-icon">
+            <a href="https://www.threads.net/@entrenosmundos" target="_blank" class="social-icon">
                 <img src="icons/threads_logo_icon.svg" alt="Threads">
             </a>
-            <a href="https://skoob.com.br" target="_blank" class="social-icon">
+            <a href="https://www.skoob.com.br/share/user/willyara" target="_blank" class="social-icon">
                 <img src="icons/skoob_icon.svg" alt="Skoob">
             </a>
-            <a href="https://amazon.com.br" target="_blank" class="social-icon">
+            <a href="https://amzn.to/4e3fSKY" target="_blank" class="social-icon">
                 <img src="icons/amazon_media_icon.svg" alt="Amazon">
             </a>
         </div>
@@ -39,21 +39,44 @@
             <li>
                 <a href="#">Resenhas</a>
                 <ul class="submenu">
-                    <li><a href="#">Resenha 1</a></li>
-                    <li><a href="#">Resenha 2</a></li>
+                    <li><a href="#">Livros Únicos</a></li>
+                    <li><a href="#">Livros com continuações</a></li>
+                    <li><a href="#">Favoritos</a></li>
+                    <li>
+                        <a href="#">Por Gênero</a>
+                        <ul class="submenu">
+                            <li><a href="#">Ficção</a></li>
+                            <li><a href="#">Não-ficção</a></li>
+                            <li><a href="#">Romance</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             <li>
                 <a href="#">Projetos</a>
                 <ul class="submenu">
-                    <li><a href="#">Projeto 1</a></li>
-                    <li><a href="#">Projeto 2</a></li>
+                    <li>
+                        <a href="#">Diário de Leitura</a>
+                        <ul class="submenu">
+                            <li><a href="#">Diário de Janeiro</a></li>
+                            <li><a href="#">Diário de Fevereiro</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Resenhando em outro idioma</a></li>
+                    <li>
+                        <a href="#">Mulheres na ficção-cientifica</a>
+                        <ul class="submenu">
+                            <li><a href="#">Autoras Clássicas</a></li>
+                            <li><a href="#">Novas Autoras</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             <li><a href="#">Contato</a></li>
         </ul>
         <div class="dotted-line"></div>
     </nav>
+
 
     <!-- Section 2 - Destaques -->
     <section class="highlights">
@@ -84,11 +107,15 @@
     <section class="quotes-carousel">
         <div class="dotted-line"></div>
         <h3>Frases de Livros</h3>
-        <div class="carousel">
-            <p>"Quando acordei hoje de manhã, eu sabia quem eu era, mas acho que já mudei muitas vezes desde então." - Alice no País das Maravilhas</p>
-            <p>"Tudo depende do tipo de lente que você utiliza para ver as coisas." - O Mundo de Sofia</p>
-            <p>"A cegueira também é isto, viver num mundo onde se tenha acabado a esperança." - Ensaio sobre a Cegueira</p>
-            <!-- Adicione mais frases conforme necessário -->
+        <div class="carousel-container">
+            <button class="arrow left-arrow" aria-label="Frase anterior">&#9664;</button>
+            <div class="carousel">
+                <p class="quote" tabindex="0">"Quando acordei hoje de manhã, eu sabia quem eu era, mas acho que já mudei muitas vezes desde então." - Alice no País das Maravilhas</p>
+                <p class="quote" tabindex="0">"Tudo depende do tipo de lente que você utiliza para ver as coisas." - O Mundo de Sofia</p>
+                <p class="quote" tabindex="0">"A cegueira também é isto, viver num mundo onde se tenha acabado a esperança." - Ensaio sobre a Cegueira</p>
+                <!-- Adicione mais frases conforme necessário -->
+            </div>
+            <button class="arrow right-arrow" aria-label="Próxima frase">&#9654;</button>
         </div>
         <div class="dotted-line"></div>
     </section>
@@ -98,27 +125,21 @@
         <h3>Resenhas Destacadas</h3>
         <div class="cards">
             <div class="card large-card">
-                <img src="capa4.jpg" alt="Capa do Livro 4">
-                <h4>Nome do Livro 4</h4>
-                <p>Data da Resenha</p>
+                <img src="https://m.media-amazon.com/images/I/81JEoeOD+4L._SY522_.jpg" alt="O problema dos três corpos">
+                <h4>O Problema dos Três Corpos</h4>
+                <p>Data da Resenha: 00/00/00</p>
                 <button>Leia aqui</button>
             </div>
             <div class="card large-card">
-                <img src="capa5.jpg" alt="Capa do Livro 5">
-                <h4>Nome do Livro 5</h4>
-                <p>Data da Resenha</p>
+                <img src="https://m.media-amazon.com/images/I/912LLkkhCaS._SY522_.jpg" alt="Devoradores de Estrelas">
+                <h4>Devoradores de Estrelas</h4>
+                <p>Data da Resenha: 00/00/00</p>
                 <button>Leia aqui</button>
             </div>
             <div class="card large-card">
-                <img src="capa6.jpg" alt="Capa do Livro 6">
-                <h4>Nome do Livro 6</h4>
-                <p>Data da Resenha</p>
-                <button>Leia aqui</button>
-            </div>
-            <div class="card large-card">
-                <img src="capa7.jpg" alt="Capa do Livro 7">
-                <h4>Nome do Livro 7</h4>
-                <p>Data da Resenha</p>
+                <img src="https://m.media-amazon.com/images/I/91S-ZOI45kL._SY522_.jpg" alt="O Fim da Infância">
+                <h4>O Fim da Infância</h4>
+                <p>Data da Resenha: 00/00/00</p>
                 <button>Leia aqui</button>
             </div>
         </div>
@@ -158,16 +179,53 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 Willyara Amorim. Todos os direitos reservados.</p>
+        
         <div class="footer-contact">
             <h4>Contato</h4>
             <p>Email: seuemail@example.com</p>
         </div>
         <div class="footer-social">
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="mailto:seuemail@example.com">E-mail</a>
+            <a href="https://www.instagram.com/entrenosmundos/" target="_blank">Instagram</a>
+            <a href="entrenosmundos@gmail.com">E-mail</a>
+
+            <p>&copy; 2024 Willyara Amorim. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const quotes = document.querySelectorAll('.quote');
+            let currentIndex = 0;
+    
+            // Mostra a primeira frase
+            quotes[currentIndex].classList.add('active');
+    
+            // Função para mostrar a frase atual
+            function showQuote(index) {
+                quotes.forEach((quote, i) => {
+                    quote.classList.remove('active'); // Remover a classe 'active' de todas as frases
+                    if (i === index) {
+                        quote.classList.add('active'); // Adiciona a classe 'active' apenas à frase atual
+                    }
+                });
+            }
+    
+            // Botões de navegação
+            const leftArrow = document.querySelector('.left-arrow');
+            const rightArrow = document.querySelector('.right-arrow');
+    
+            leftArrow.addEventListener('click', () => {
+                currentIndex = (currentIndex === 0) ? quotes.length - 1 : currentIndex - 1; // Navega para a frase anterior
+                showQuote(currentIndex);
+            });
+    
+            rightArrow.addEventListener('click', () => {
+                currentIndex = (currentIndex === quotes.length - 1) ? 0 : currentIndex + 1; // Navega para a próxima frase
+                showQuote(currentIndex);
+            });
+        });
+    </script>
+    
 
 </body>
 </html>

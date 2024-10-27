@@ -36,9 +36,13 @@ body {
     transform: scale(1.1); /* Efeito de aumento ao passar o mouse */
 }
 
+/* Estilo do Menu */
 .menu-section {
     text-align: center;
     position: relative;
+    background-color: #422b4a; /* Cor de fundo do menu */
+    padding: 10px 0; /* Espaçamento interno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
 }
 
 .menu-section ul {
@@ -50,25 +54,64 @@ body {
 
 .menu-section ul li {
     position: relative;
-    margin: 0 20px;
+    margin: 0 30px; /* Margem maior entre os itens */
 }
 
+.menu-section ul li a {
+    text-decoration: none;
+    color: #F5F5F5; /* Cor do texto */
+    padding: 10px 15px; /* Padding para aumentar área clicável */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s, color 0.3s; /* Efeitos de transição */
+}
+
+.menu-section ul li a:hover {
+    background-color: #F5F5F5; /* Cor de fundo ao passar o mouse */
+    color: #422b4a; /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo do Submenu */
 .menu-section ul li .submenu {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 100%; /* Alinhar com o topo do item pai */
     left: 0;
-    background: #ffffff;
+    background: #422b4a; /* Cor de fundo do submenu */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    z-index: 1; /* Certifique-se de que o submenu fique acima */
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-top: 10px; /* Espaço acima do submenu */
+    white-space: nowrap; /* Impedir quebras de linha */
 }
 
 .menu-section ul li:hover .submenu {
-    display: block;
+    display: block; /* Exibir submenu ao passar o mouse */
 }
 
-.menu-section .dotted-line {
-    border-top: 1px dotted #F5F5F5;
-    margin: 10px 0;
+/* Estilo para os itens do submenu */
+.menu-section ul li .submenu li {
+    margin: 0; /* Remover margens do submenu */
+}
+
+.menu-section ul li .submenu li a {
+    padding: 10px 20px; /* Padding no submenu */
+    color: #F5F5F5; /* Cor do texto */
+    transition: background-color 0.3s; /* Transição suave */
+    display: block; /* Faz o link ocupar toda a largura */
+    width: auto; /* Ajuste automático à largura do conteúdo */
+    min-width: 150px; /* Largura mínima para os itens */
+}
+
+.menu-section ul li .submenu li a:hover {
+    background-color: #F5F5F5; /* Cor de fundo ao passar o mouse no submenu */
+    color: #422b4a; /* Cor do texto ao passar o mouse no submenu */
+}
+
+/* Estilo para sub-submenu */
+.menu-section ul li .submenu .submenu {
+    top: 0; /* Alinhar ao topo do item pai */
+    left: 100%; /* Colocar ao lado do submenu pai */
+    margin-left: 10px; /* Espaço entre os submenus */
 }
 
 .highlights, .quotes-carousel, .featured-reviews, .about-partners {
@@ -99,8 +142,93 @@ body {
     width: 200px;
 }
 
+.quotes-carousel {
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .carousel {
-    animation: scroll 10s infinite linear;
+    width: 1000px; /* Ajuste conforme necessário */
+    overflow: hidden;
+    text-align: center;
+}
+
+.quote {
+    display: none; /* Ocultar todas as frases inicialmente */
+    padding: 10px;
+}
+
+.quote.active {
+    display: block; /* Exibir apenas a frase ativa */
+}
+
+.arrow {
+    background-color: #422b4a; /* Cor de fundo das setas */
+    color: #F5F5F5; /* Cor do texto */
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 0 10px;
+    border-radius: 5px;
+    transition: background-color 0.5s;
+}
+
+.arrow:hover {
+    background-color: #90619c; /* Cor ao passar o mouse */
+}
+
+.arrow:focus {
+    outline: 2px solid #F5F5F5; /* Contorno ao focar */
+}
+
+.dotted-line {
+    border-top: 1px dotted #F5F5F5;
+    margin: 10px 0;
+}
+
+.featured-reviews .card {
+    border: none; /* Remover a borda */
+    padding: 15px; /* Aumentar o padding */
+    background-color: #422b4a; /* Manter a cor de fundo do card */
+    transition: transform 0.2s;
+    width: 250px; /* Ajustar a largura do card conforme necessário */
+    height: auto; /* Altura automática para acomodar as imagens */
+}
+
+.featured-reviews img {
+    width: 100%; /* Assegurar que as imagens ocupem toda a largura do card */
+    height: auto; /* Altura automática para manter a proporção da imagem */
+    border-radius: 5px; /* Bordas arredondadas para um toque elegante */
+}
+
+.featured-reviews .card:hover {
+    transform: translateY(-5px); /* Efeito ao passar o mouse */
+}
+
+/* Estilos dos botões de todos os cards */
+.card button {
+    width: 90%; /* Ocupa quase toda a largura do card */
+    padding: 10px; /* Espaçamento interno para conforto */
+    border: none; /* Remove borda padrão do botão */
+    border-radius: 20px; /* Bordas arredondadas */
+    background-color: transparent; /* Fundo transparente */
+    color: #F5F5F5; /* Cor do texto (leitura) */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: background-color 0.3s, color 0.3s, font-weight 0.3s; /* Transição suave para hover */
+    margin-top: 10px; /* Espaço acima do botão */
+}
+
+.card button:hover {
+    background-color: #ffffff; /* Cor de fundo ao passar o mouse */
+    color: #422b4a; /* Cor do texto ao passar o mouse */
+    font-weight: bold; /* Texto em negrito ao passar o mouse */
 }
 
 @keyframes scroll {
@@ -110,8 +238,8 @@ body {
 
 .profile-pic {
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 180px;
 }
 
 .footer {
