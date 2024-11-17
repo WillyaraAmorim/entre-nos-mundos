@@ -13,15 +13,18 @@
    CABEÇALHO
    =========================================== */
 .header {
-    background-color: #2b3240; /* Cor neutra para contraste */
+    background-color: #071f28; /* Cor neutra para contraste */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
+    max-width: 1200px; /* Limite de largura */
+    margin: 0 auto; /* Centralizar */
 }
 
 .logo-image {
     width: 150px;
+    margin: 0 auto; /* Centraliza a logo */
 }
 
 .social-icons {
@@ -45,10 +48,10 @@
 /* ===========================================
    MENU PRINCIPAL
    =========================================== */
-.menu-section {
+   .menu-section {
     text-align: center;
     position: relative;
-    background-color: #3a475e; /* Fundo do menu */
+    background-color: #071f28; /* Fundo do menu */
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -67,92 +70,71 @@
 
 .menu-section ul li a {
     text-decoration: none;
-    color: #b2ebf2;
+    color: #e8cbfc;
     padding: 10px 15px;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
 
 .menu-section ul li a:hover {
-    background-color: #26c6da; /* Fundo ao passar o mouse */
-    color: #3a475e;
+    background-color: #97d5a4; /* Fundo ao passar o mouse */
+    color: #071f28;
 }
 
 /* ===========================================
    SUBMENU E SUB-SUBMENU
    =========================================== */
-   /* Estilo do menu principal */
-.menu-section ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-}
-   
-   .menu-section ul li .submenu {
+/* Submenu de primeiro nível */
+.menu-section ul li .submenu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background: #3a475e;
+    background: #071f28;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     border-radius: 5px;
     padding: 10px 0;
     white-space: nowrap;
-    opacity: 0; /* Submenu invisível inicialmente */
-    transition: opacity 0.2s ease-in-out; /* Transição suave */
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
 }
 
 .menu-section ul li:hover .submenu {
     display: block;
-    transition: opacity 0.2s ease-in-out;
-    opacity: 1; /* Torna o submenu visível */
+    opacity: 1;
 }
 
-.menu-section ul li .submenu li {
-    margin: 0;
-    position: relative;
-}
-
-.menu-section ul li .submenu li a {
-    padding: 12px 20px;
-    color: #b2ebf2;
-    display: block;
-    min-width: 150px;
-    transition: background-color 0.3s;
-}
-
-.menu-section ul li .submenu li a:hover {
-    background-color: #26c6da;
-    color: #3a475e;
-}
-
-/* Nível 2 - Submenu-2 */
+/* Submenu de segundo nível */
 .menu-section ul li .submenu .submenu-2 {
     display: none;
     position: absolute;
     top: 0;
     left: 100%;
     margin-left: 10px;
-    background: #3a475e;
-    padding-top: 0px;
+    background: #071f28;
+    padding-top: 0;
     border-radius: 5px;
     z-index: 1;
 }
 
+/* Exibição do submenu de segundo nível ao passar o mouse no item correspondente */
+.menu-section ul li:hover .submenu .submenu-2 {
+    display: block;
+}
+
 /* Indicador visual de submenu (seta) */
 .menu-section ul li a.has-submenu::after {
-    content: " ▼";
+    content: "▶";
     font-size: 0.8em;
-    color: #b2ebf2;
+    color: #e8cbfc;
     margin-left: 5px;
 }
 
-/* Links do submenu */
+/* Estilo para os links do submenu */
 .menu-section ul li .submenu li a,
 .menu-section ul li .submenu .submenu-2 li a {
-    padding: 10px 20px;
-    color: #b2ebf2;
+    padding: 12px 20px;
+    color: #97d5a4;
     display: block;
     min-width: 150px;
     transition: background-color 0.3s;
@@ -160,8 +142,8 @@
 
 .menu-section ul li .submenu li a:hover,
 .menu-section ul li .submenu .submenu-2 li a:hover {
-    background-color: #26c6da;
-    color: #3a475e;
+    background-color: #e8cbfc;
+    color: #071f28;
 }
 
 /* ===========================================
@@ -179,13 +161,13 @@
 }
 
 .card {
-    border: 1px solid #ccc;
+    border: 1px solid #e8cbfc;
     border-radius: 5px;
     margin: 10px;
     padding: 10px;
     background-color: #3a475e;
     transition: transform 0.2s;
-    color: #e0f2f1;
+    color: #e8cbfc;
 }
 
 .card:hover {
@@ -230,8 +212,8 @@
 }
 
 .arrow {
-    background-color: #5c6bc0;
-    color: #e0f2f1;
+    background-color: #e8cbfc;
+    color: #071f28;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -246,21 +228,23 @@
 }
 
 .arrow:focus {
-    outline: 2px solid #e0f2f1;
+    outline: 2px solid #e8cbfc;
 }
 
 /* ===========================================
    LINHA PONTILHADA
    =========================================== */
 .dotted-line {
-    border-top: 1px dotted #e0f2f1;
+    border-top: 1px dotted #e8cbfc;
     margin: 10px 0;
 }
 
 .featured-reviews .card {
-    border: none; /* Remover a borda */
+    border: 1px solid #e8cbfc;
+    border-radius: 5px;
     padding: 15px; /* Aumentar o padding */
-    background-color: #422b4a; /* Manter a cor de fundo do card */
+    background-color: #071f28; /* Manter a cor de fundo do card */
+    color: #97d5a4;
     transition: transform 0.2s;
     width: 250px; /* Ajustar a largura do card conforme necessário */
     height: auto; /* Altura automática para acomodar as imagens */
@@ -282,10 +266,10 @@
 .card button {
     width: 90%; /* Ocupa quase toda a largura do card */
     padding: 10px; /* Espaçamento interno para conforto */
-    border: none; /* Remove borda padrão do botão */
+    border: #e8cbfc; /* Remove borda padrão do botão */
     border-radius: 20px; /* Bordas arredondadas */
     background-color: transparent; /* Fundo transparente */
-    color: #F5F5F5; /* Cor do texto (leitura) */
+    color: #97d5a4; /* Cor do texto (leitura) */
     font-size: 16px; /* Tamanho da fonte */
     cursor: pointer; /* Muda o cursor ao passar sobre o botão */
     transition: background-color 0.3s, color 0.3s, font-weight 0.3s; /* Transição suave para hover */
@@ -293,7 +277,7 @@
 }
 
 .card button:hover {
-    background-color: #ffffff; /* Cor de fundo ao passar o mouse */
+    background-color: #e8cbfc; /* Cor de fundo ao passar o mouse */
     color: #422b4a; /* Cor do texto ao passar o mouse */
     font-weight: bold; /* Texto em negrito ao passar o mouse */
 }

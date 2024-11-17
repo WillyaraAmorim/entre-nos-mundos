@@ -31,36 +31,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const menuItems = document.querySelectorAll('.menu-section ul li > a.has-submenu');
+    // Menu com 3 níveis de submenus
+    const menuItems = document.querySelectorAll('.menu-section .has-submenu');
 
     menuItems.forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault(); // Impede o comportamento padrão do link
-
-            // Alterna a visibilidade do submenu correspondente
+        item.addEventListener('mouseenter', (e) => {
             const submenu = item.nextElementSibling;
-            if (submenu.style.display === 'block') {
-                submenu.style.display = 'none';
-            } else {
-                closeAllSubmenus(); // Fecha outros submenus abertos
+            
+            // Se o submenu de primeiro nível for clicado, exibe
+            if (submenu && submenu.classList.contains('submenu')) {
+                submenu.style.display = 'block';
+            }
+
+            // Se o submenu de segundo nível for clicado, exibe
+            if (submenu && submenu.classList.contains('submenu-2')) {
                 submenu.style.display = 'block';
             }
         });
-    });
 
-    // Para submenus de segundo nível
-    const subMenuItems = document.querySelectorAll('.submenu > li > a.has-submenu');
-    
-    subMenuItems.forEach(subItem => {
-        subItem.addEventListener('click', (e) => {
-            e.preventDefault();
-            const subMenu2 = subItem.nextElementSibling;
+        item.addEventListener('mouseleave', (e) => {
+            const submenu = item.nextElementSibling;
             
-            if (subMenu2.style.display === 'block') {
-                subMenu2.style.display = 'none';
-            } else {
-                closeAllSubmenus();
-                subMenu2.style.display = 'block';
+            // Fecha o submenu quando o mouse sai
+            if (submenu && submenu.classList.contains('submenu')) {
+                submenu.style.display = 'none';
+            }
+            
+            if (submenu && submenu.classList.contains('submenu-2')) {
+                submenu.style.display = 'none';
             }
         });
     });
@@ -72,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Função para fechar todos os submenus
     function closeAllSubmenus() {
         document.querySelectorAll('.submenu, .submenu-2').forEach(submenu => {
             submenu.style.display = 'none';
