@@ -9,6 +9,21 @@
     color: #e0f2f1; /* Texto claro */
 }
 
+.sidebar {
+    width: 25%; /* Ajuste conforme necessário */
+    background-color: #f5f5f5;
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+    width: 75%; /* Ajuste conforme necessário */
+    padding: 20px;
+}
+
+.highlights, .quotes-carousel, .featured-reviews {
+    margin-bottom: 20px;
+}
 /* ===========================================
    CABEÇALHO
    =========================================== */
@@ -282,6 +297,114 @@
     font-weight: bold; /* Texto em negrito ao passar o mouse */
 }
 
+/* ===========================================
+   ESTILO DA SEÇÃO 5 - SOBRE MIM E PARCEIROS
+   =========================================== */
+   .about-partners {
+    display: flex;
+    flex-direction: column; /* Alinhamento vertical dos elementos */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e8cbfc; /* Fundo lilás */
+    color: #042e3d; /* Texto azul-petróleo */
+    padding: 20px;
+    width: 300px; /* Largura inicial */
+    max-width: 90%; /* Limita a largura em telas pequenas */
+    position: fixed; /* Fixa no lado direito */
+    top: calc(50px); /* Altura do header */
+    bottom: calc(50px); /* Altura do footer */
+    right: 0;
+    z-index: 10; /* Garante que fique acima de outros elementos */
+    overflow-y: auto; /* Adiciona scroll caso o conteúdo ultrapasse */
+    border-left: 3px solid #97d5a4; /* Separação com borda */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Estilo da foto de perfil */
+.about-partners .profile-pic {
+    border-radius: 50%;
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Estilo do texto da descrição */
+.about-partners p {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    margin: 10px 0;
+    color: #042e3d;
+}
+
+/* Estilo do formulário de inscrição */
+.about-partners .subscribe {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.about-partners .subscribe h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.about-partners .subscribe input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #97d5a4;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.about-partners .subscribe button {
+    padding: 10px 20px;
+    background-color: #97d5a4;
+    color: #071f28;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.about-partners .subscribe button:hover {
+    background-color: #042e3d;
+    color: #e8cbfc;
+}
+
+/* Estilo da seção de parceiros */
+.about-partners .partners {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.about-partners .partners h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.about-partners .partner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.about-partners .partner img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.about-partners .partner p {
+    font-size: 14px;
+    color: #042e3d;
+    text-align: center;
+}
+
+
+
 @keyframes scroll {
     0% { transform: translateY(0); }
     100% { transform: translateY(-100%); }
@@ -306,5 +429,38 @@
     margin: 0 10px;
     color: #e0f2f1;
     text-decoration: none;
+}
+
+/* RESPONSIVIDADE - AJUSTES PARA DISPOSITIVOS PEQUENOS */
+@media screen and (max-width: 1024px) {
+    .about-partners {
+        width: 250px; /* Reduz largura */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-partners {
+        width: 200px; /* Reduz mais em tablets */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .about-partners {
+        position: static; /* Remove a posição fixa */
+        margin: 10px auto; /* Centraliza no fluxo do layout */
+        width: 100%; /* Ocupa a largura total */
+        border-left: none; /* Remove borda */
+        border: 1px solid #97d5a4; /* Adiciona borda ao redor */
+    }
+}
+
+/* RESPONSIVIDADE - AJUSTES DE TEXTO E IMAGENS */
+.about-partners p {
+    font-size: 14px; /* Ajusta o texto para telas menores */
+}
+
+.about-partners .profile-pic {
+    width: 100px; /* Reduz tamanho da imagem */
+    height: auto;
 }
 
